@@ -57,7 +57,8 @@ class LoginState extends State<LoginPage> {
                 decoration: InputDecoration(
                     hintText: "password",
                     labelText: "password",
-                    icon: Icon(Icons.password), suffixIcon: IconButton(onPressed: (){setState(() { if(showpass) {
+                    icon: Icon(Icons.password), suffixIcon: IconButton(onPressed: (){setState(() {
+                      if(showpass) {
                   showpass = false;
                 }
                 else{

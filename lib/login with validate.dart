@@ -1,6 +1,11 @@
+import 'dart:async';
+import 'dart:js_util';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:newflutterproject/Homepage.dart';
+
 
 void main() {
   runApp(DevicePreview(
@@ -18,10 +23,13 @@ class Login_with_validate extends StatefulWidget {
 }
 
 class Login_with_validate_State extends State<Login_with_validate> {
-  bool showpass=true;
+
+
 
   @override
-  GlobalKey<FormState>formKey=GlobalKey();
+
+  GlobalKey<FormState>formkey=GlobalKey();
+  bool showpass=true;
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -29,7 +37,7 @@ class Login_with_validate_State extends State<Login_with_validate> {
         ),
         body: SingleChildScrollView(
             child:Form(
-          key:formKey,
+          key:formkey,
 
           child: Column(children: [
             SizedBox(
@@ -54,7 +62,7 @@ class Login_with_validate_State extends State<Login_with_validate> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15)))),
                   validator: (uname){
-                  if(uname!.isEmpty || uname.contains("@")|| uname.contains(".")){
+                  if(uname!.isEmpty || uname.contains("#")|| uname.contains("/")){
                   return "Enter valid username";
               }
               else{
@@ -68,13 +76,35 @@ class Login_with_validate_State extends State<Login_with_validate> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 100, right: 100),
-              child: TextFormField(
+              child: TextFormField(obscuringCharacter: "*",obscureText: showpass,
                 decoration: InputDecoration(
                     hintText: "password",
                     labelText: "password",
-                    prefixIcon: Icon(Icons.password),
+                    prefixIcon: Icon(Icons.password),suffixIcon: IconButton(onPressed:(){setState(() {
+
+                      if(showpass){
+                        showpass=false;
+                      }
+                      else{
+                        showpass=true;
+                      }
+                    }
+
+                );},
+                  icon: Icon(showpass==true ? Icons.visibility_off:Icons.visibility),),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15))),),),
+                        borderRadius: BorderRadius.circular(15))),
+                             validator: (password) {
+             if (password!.isEmpty || password!.length<6)
+             {
+
+               return ("enter valid password");
+             }
+             else {
+               return null;
+             }
+           }
+              ),),
 
             SizedBox(
               height: 20,
@@ -83,7 +113,12 @@ class Login_with_validate_State extends State<Login_with_validate> {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red, side: BorderSide(width: 1.0)),
-                onPressed: () {},
+                onPressed: () {
+                  final valid=formkey.currentState!.validate();
+                  if(valid){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Homepage()));
+                  }
+                },
                 child: Text("Login"),
               ),
             ),
