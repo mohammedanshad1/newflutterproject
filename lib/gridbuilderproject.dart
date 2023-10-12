@@ -60,7 +60,7 @@ class Gridbuildereg extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("fcdfsadfa"),
+        title: Text("Grid Builder"),
         centerTitle: true,
       ),
       body: GridView.builder(
@@ -73,8 +73,7 @@ class Gridbuildereg extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
-                  child: Icon(
-                    icon[index],
+                  child: Icon(icon[index],
                     size: 30,
                   ),
                 ),
