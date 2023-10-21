@@ -73,7 +73,8 @@ SizedBox(height: 20,),
      ),  SizedBox(height: 20,),
      Padding(
        padding: const EdgeInsets.only(left: 500,right: 500),
-       child: TextField(obscureText: showpass,obscuringCharacter: "*",decoration: InputDecoration(hintText: "Confirm password",labelText: "Confirm password",prefixIcon: Icon(Icons.password),suffixIcon: IconButton(onPressed: (){
+       child: TextField(obscureText: showpass,obscuringCharacter: "*",decoration:
+       InputDecoration(hintText: "Confirm password",labelText: "Confirm password",prefixIcon: Icon(Icons.password),suffixIcon: IconButton(onPressed: (){
          setState(() {
            if(showpass){
              showpass=false;
