@@ -39,7 +39,8 @@ class _bottomnavigationworkState extends State<bottomnavigationwork> {
 
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
-                  child: Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(500),color:Colors.red[100]),child:
+                  child: Container(decoration: BoxDecoration(borderRadius:
+                  BorderRadius.circular(500),color:Colors.red[100]),child:
                     Row(
                       children: [
                         Icon(Icons.add,color: Colors.pink,),
