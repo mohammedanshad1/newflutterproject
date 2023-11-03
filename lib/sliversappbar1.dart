@@ -14,10 +14,7 @@ class sliversappbar1 extends StatefulWidget{
 }
 
 class _sliversappbar1State extends State<sliversappbar1> {
-  var icn=[(Icons.airplanemode_active),
-    (Icons.car_crash_rounded),
-    (Icons.bus_alert)];
-
+  var icn=[TabBarView(children: [lumches2()])];
   int index=0;
   @override
   Widget build(BuildContext context) {
@@ -28,7 +25,14 @@ class _sliversappbar1State extends State<sliversappbar1> {
            Text("Goa"),
 
          ],
-       ),
+       ),actions: [
+         Icon(Icons.camera),
+        PopupMenuButton(itemBuilder: (context){
+          return[
+            PopupMenuItem(child: Text("settings"))
+          ];
+        })
+       ],
        bottom: TabBar(tabs: [
          Tab(child:Icon(Icons.airplanemode_active,),),
          Tab(child:Icon(Icons.car_crash_outlined,),),
@@ -36,10 +40,27 @@ class _sliversappbar1State extends State<sliversappbar1> {
        ],),),
       body:TabBarView(
         children: [
-          Icon(icn[index],size: 50,)
+          lumches2()
         ],
       )
      ),
    );
   }
+}
+
+class lumches2 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      body: TabBarView(children: [
+        Icon(Icons.airplanemode_active,size: 50,),
+        Icon(Icons.car_crash_rounded,size: 50,),
+        Icon(Icons.bus_alert,size: 50,),
+
+      ],),
+    );
+  }
+
+
 }

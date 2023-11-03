@@ -42,6 +42,24 @@ dependencies:
   lottie: ^2.6.0
   fancy_bottom_navigation_2: ^0.3.5
   circular_bottom_navigation: ^2.3.0
+  carousel_slider: ^4.2.1
+  expansion_tile_card: ^3.0.0
+  flutter_svg: ^2.0.8
+  widget_slider: ^0.1.0
+  flutter_custom_carousel_slider: ^1.2.0
+  liquid_progress_indicator_v2: ^0.5.0
+  image_picker: ^1.0.4
+  mime: ^1.0.4
+  video_player:
+  progressive_image: ^2.0.1
+  cached_network_image: ^3.3.0
+  transparent_image: ^2.0.1
+  liquid_progress_indicator: ^0.4.0
+  gradient_slider: ^1.0.1
+
+
+
+
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +87,7 @@ flutter:
   assets:
      - assets/icons/
      - assets/animations/
+     - assets/svg/
      #- images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
