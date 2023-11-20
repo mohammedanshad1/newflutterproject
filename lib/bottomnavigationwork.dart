@@ -47,7 +47,8 @@ class _bottomnavigationworkState extends State<bottomnavigationwork> {
 
                          Padding(
                            padding: const EdgeInsets.only(right: 10),
-                           child: Text("Add new",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),
+                           child: Text("Add new",style:
+                           TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),
                          ),
 
                       ],
