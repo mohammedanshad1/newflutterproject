@@ -58,6 +58,8 @@ dependencies:
   gradient_slider: ^1.0.1
   awesome_dialog: ^3.1.0
   google_maps_flutter: ^2.5.0
+  shared_preferences: ^2.2.2
+  sqflite: ^2.3.0
 
 
 

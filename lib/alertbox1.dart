@@ -11,29 +11,27 @@ class alertbox1 extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Alertbox",style:TextStyle(color: Colors.black),),backgroundColor: Colors.blue,),
-       body: Center(
-         child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-           onPressed: () { showDialog(context: context, builder: (context){
-             return
-              AlertDialog(title: Text("Exit"),
-              content: Text("Do you want to Exit?"),
+      body:Center(child: ElevatedButton(onPressed: () {
 
+        showDialog(context: context, builder:( context){
+          return
+              AlertDialog(content: Text("Exit"),
+              title: Text("Do you want to Exit?"),
               actions: [
+
                 TextButton(onPressed: (){
                   Navigator.of(context).pop();
                 }, child: Text("Yes")),
                 TextButton(onPressed: (){
                   Navigator.of(context).pop();
                 }, child: Text("No")),
-
                 TextButton(onPressed: (){
-
                   Navigator.of(context).pop();
-                }, child: Text("Cancel")),
+                }, child: Text("Cancel"))
               ],);
 
-           }); }, child:  Text("Show Alert"),),
-       ),
+        });
+      }, child: Text("Alert box"),))
 
     );
   }

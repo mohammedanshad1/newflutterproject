@@ -8,17 +8,17 @@ class movielist extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     final id =ModalRoute.of(context)?.settings.arguments;
-   final movie=demo.firstWhere((movie) => movie["id"] == id);
+   final movies=demo.firstWhere((movies) => movies["id"] == id);
     return Scaffold(
 
       appBar: AppBar(title: Text("Selected Movie"),),
       body: ListView(children: [
 
 
-        Center(child: Text("${movie["name"]}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),),),
-        Image(image: NetworkImage("${movie["image"]}")),
-        Text("${movie["description"]}",style: TextStyle(fontSize: 20),),
-        Text("${movie["cast"]}",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)
+        Center(child: Text("${movies["name"]}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),),),
+        Image(image: NetworkImage("${movies["image"]}")),
+        Text("${movies["description"]}",style: TextStyle(fontSize: 20),),
+        Text("${movies["cast"]}",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),)
 
       ],),
     );

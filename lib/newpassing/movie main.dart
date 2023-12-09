@@ -18,18 +18,21 @@ class movie extends StatelessWidget{
   Widget build(BuildContext context) {
    return Scaffold(
      appBar: AppBar(title: Text("Movies"),),
-
-     body: ListView(children:demo.map((movie) => TextButton(onPressed: (){
-       gotoNext(context,movie["id"]);
-     }, child: Text("${movie["name"]}",style: TextStyle(fontSize: 25),)))
-         .toList()
-     ),
+   body: ListView(
+    children:demo.map((movies) => TextButton(onPressed: ()=>gotoNext(
+    context,movies["id"]
+    ), child:Text("${movies["name"]}") )).toList()
+   )
    );
   }
 
-  void gotoNext(BuildContext context, movie) {
-    Navigator.of(context).pushNamed("secondpage",arguments: movie);
+  gotoNext(BuildContext context,movies) {
+    Navigator.of(context).pushNamed("secondpage",arguments: movies);
+
   }
+
+
+
 
 
 }
