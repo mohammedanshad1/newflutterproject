@@ -23,7 +23,7 @@ class _regState extends State<reg> {
   @override
   Widget build(BuildContext context) {
     void AddnewUser(String username, String email, String password) async {
-      var id = await SQLHelper.AddNewUser(username, email, password);
+      var id= await SQLHelper.AddNewUser(username, email, password);
       print(id);
       if (id != null) {
         print("$username,$email,$password");

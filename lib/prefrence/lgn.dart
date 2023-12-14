@@ -69,6 +69,7 @@ class _lgpageState extends State<lgpage> {
               if (unme != "" && pwds != "") {
                 print("Login Success");
                 user.setString("username2", unme);
+                
 
                 user.setBool("newusers", false);
                 print(unme);
